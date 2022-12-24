@@ -1,0 +1,3 @@
+Titulo:Mario//VideoGame:SNES
+Titulo:SONIC//VideoGame:MEGADRIVE
+Titulo:TombRaider//VideoGame:PS1

@@ -1,0 +1,74 @@
+____________________METÓDOS PARA LISTAS________________________________________________________________
+append(item)=adiciona um item ao final da lista
+count(item)=Retorna o número de ocorrências do item na lista
+index(item)=retorna o indice da primeira ocorrencia do item na lista
+insert(indice,item)=insere item em um indice especifico
+pop()=remove o ultimo item
+remove(item)=remove a primeira ocorrencia do item
+reverse()=invert  a ordem da lista
+sort()=ordena a lista
+
+_________________________________________________________________________________________________________________
+____________________METÓDOS PARA STRINGS_________________________________________________________________________
+startswith=verifica se caracteres existem no inicio da string
+endswith=verifica se caracteres existemno final da string
+lower=converte string para minuscula
+upper=convertestring para maiuscula
+find=busca a primeira ocorrencia de um caractere em uma string
+rfind=busca a primeira ocorrencia de um caractere em uma string da direita para a esquerda
+center=centraliza uma string
+ljust=ajusta uma string para alinhamentos para  a ESQUERDA
+rjust=ajusta uma string para alinhamentos para  a DIREITA
+split=divide uma string
+replace=substitui caracteres em uma string
+lstrip= remove espaços em branco a ESQUERDA de uma string
+rstrip= remove espaços em branco a DIREITA de uma string
+strip=remove espaços em branco de uma extremidade
+________________________________________________________________________________________________________________
+
+________________________MANIPULAÇÃO DE ARQUIVOS_________________________________________________________________
+WITH OPEN (nome do arquivo,metodo) as (variavel do arquivo)
+Open()
+r = LEITURA
+w = ESCRITA , APAGA O CONTEÚDO SE JÁ EXISTIR
+a = ESCRITA , MAS PRESERVA O QUE JÁ EXISTIR
+b = MODO BINÁRIO
++ = ATUALIZAÇÃO (LEITURA E ESCRITA,APAGA O CONTEÚDO?)
+.close() = FECHAR ARQUIVO
+.read() = LER ARQUIVO
+.readlines() = LER ARQUIVO linha por linha(transforma em lista)(usar laço for)
+.write() = ESCREVER SOBRE
+.seek(0,0) = MOVER O CURSOR DO ARQUIVO PARA O COMEÇO, (OU ALGUM LUGAR,1,1)
+
+________________________________________________________________________________________________________________
+_____________________________________MANIPULAÇÃO DE TABELA NO PANDAS____________________________________________
+df.mean() = Retorna a Média das colunas
+df.corr() = Retorna a correlação entre as colunas na tabela
+df.count() = Retorna o numero de valores nulos na tabela
+df.max() = RetornA O MAIOR VALOR EM UMA COLUNA
+df.min() = RETORNA O MENOR VALOR EM UMA COLUNA
+df.median() = RETORNA A MÉDIA DE CADA COLUNA
+df.std() = RETORNA A VARIAÇÃO PADRÃO DE CADA COLUNA
+
+____________________________________________CORES_______________________________________________________________
+METODO : \033[ESTILO:TEXTO:FUNDOm
+
+EXEMPLO: \033[3:34:47m
+
+ESTILO:0 NENHUM            TEXTO: 30 PRETO              FUNDO: 40 PRETO
+       1  LETRA GROSSA            31 VERMELHO                  41 VERMELHO
+       3  ITÁLICO                 32 VERDE                     42 VERDE
+       4  LINHA EMBAIXO           33 AMARELO                   43 AMARELO
+       7  NEGAIVO                 34 AZUL                      44 AZUL
+                                  35 ROSA                      45 ROSA
+                                  36 AZUL CLARO                46 AZUL CLARO
+                                  37 CINZA                     47 CINZA
+_______________________________________________________________________________________________________________
+________________________________MANIPULAÇÃO SQL________________________________________________________________
+BUSCAS:
+WHERE LIKE:     (PODE SE USAR NOT LIKE PARA BUSCAR O INVERSO)
+'X%' = ONDE COMEÇA COM X
+'%X' = ONDE TEM X A PARTIR DO PRIMEIRO
+'%X%' = ONDE TEM X EM QUALQUER LUGAR
+'_X%' = ONDE TEM O X NA SEGUNDA POSIÇÃO
+'__X%' = ONDE TEM X NA TERCEIRA POXIÇÃO E ASSIM POR DIANTE
