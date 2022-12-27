@@ -1,6 +1,7 @@
-from mysql import connector
-import pandas as pd
 from time import sleep
+
+import pandas as pd
+from mysql import connector
 
 pd.set_option('display.expand_frame_repr', False)
 
