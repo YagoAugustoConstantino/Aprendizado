@@ -5,25 +5,26 @@ listaprodutos = []
 
 
 # ---cadastrar produto---
-def Cadastrar_produto(code):
+def cadastrar_produto(code):
     try:
         print('Bem vindo ao Cadastro de Produtos')
         print(f'o Código do produto a ser cadastrado é:{code}')
-        Nome = input('Digite  o nome do produto:\n')
-        Valor = int(input('Digite  o valor do produto:\n'))
-        Fabricante = input('Digite o fabricante do produto\n')
-        dicionario_produtos = { 'Nome': Nome,
-                                'Fabricante': Fabricante,
-                                'Valor': Valor,
-                                'Código': code}
+        nome = input('Digite  o nome do produto:\n')
+        valor = int(input('Digite  o valor do produto:\n'))
+        fabricante = input('Digite o fabricante do produto\n')
+        dicionario_produtos = {'Nome': nome,
+                               'Fabricante': fabricante,
+                               'Valor': valor,
+                               'Código': code}
         return listaprodutos.append(dicionario_produtos.copy())
-    except:ValueError('Coloque o dado correto... tente novamente')
+    except:
+        ValueError('Coloque o dado correto... tente novamente')
 
 
 # ----- Fim do Cadastro---
 
 
-def Consulta_produto():  # ---Começao de consulta por produto---
+def consulta_produto():  # ---Começao de consulta por produto---
     print('Bem vindo a Consulta de Produtos')
     while True:
         try:
@@ -62,16 +63,17 @@ def Consulta_produto():  # ---Começao de consulta por produto---
         except ValueError:
             print('É necessário usar um código que seja um número inteiro e positivo entre 1 e 4 ')
 
+
 # ____Fim da consulta____
 
-#------Começo da Remoção---
-def Remover_produto():
+# ------Começo da Remoção---
+def remover_produto():
     print('Bem vindo a Remoção de produtos')
     entrada = int(input('Qual o Código do produto a ser removido?:'))
     for produto in listaprodutos:
         if produto['Código'] == entrada:
             listaprodutos.remove(produto)
-            #------------Fim da Remoção-----------
+            # ------------Fim da Remoção-----------
 
 
 # Main :
@@ -87,11 +89,11 @@ while True:
         opcao = int(input('Escolha uma Tarefa a ser executada\n'))
         if opcao == 1:
             Codigo += 1
-            Cadastrar_produto(Codigo)
+            cadastrar_produto(Codigo)
         elif opcao == 2:
-            Consulta_produto()
+            consulta_produto()
         elif opcao == 3:
-            Remover_produto()
+            remover_produto()
         elif opcao == 4:
             print('\nCadastro de produtos Encerrado....')
             break
