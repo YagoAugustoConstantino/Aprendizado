@@ -1,7 +1,10 @@
 import pandas as pd
+import plotly.express as px
+
 
 pd.set_option('display.expand_frame_repr', False)
 # pd.set_option('display.max_rows',None)
+
 vendas = pd.read_excel('../ARQUIVOS/Vendas.xlsx')
 tabela_vendas = pd.DataFrame(vendas)
 # print(tabela_vendas.describe())
@@ -26,13 +29,21 @@ tabela_vendas = pd.concat([tabela_vendas, tabela_vendas])
 print(tabela_vendas['ID Loja'].value_counts())
 # print(tabela_vendas[['Produto','Valor Final']].groupby('Produto').sum())
 # print(tabela_vendas[['Produto','Valor Final','Valor Unitário']].groupby('Produto').mean())
-tabelageral = tabela_vendas.groupby('ID Loja').sum()
+tabelageral = tabela_vendas.groupby('ID Loja').sum(numeric_only=True)
 tabelageral = tabelageral.sort_values(by="Valor Final", ascending=False)
-print(tabela_vendas)
+tabela_vendas = tabela_vendas.dropna(how='all',axis=1)
+tabela_vendas = tabela_vendas.dropna(how='all',axis=0)
+print(tabela_vendas.info())
 
+print(tabela_vendas['ID Loja'].value_counts())
 print(tabelageral)
 
 print(tabela_vendas.describe())
+
+for coluna in tabela_vendas.columns:
+    grafico = px.histogram(tabela_vendas, x=coluna, color='Produto', text_auto=True)
+    grafico.show()
+
 
 
 def nome_loja():

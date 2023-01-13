@@ -1,29 +1,29 @@
 ____________________METÓDOS PARA LISTAS________________________________________________________________
-append(item)=adiciona um item ao final da lista
-count(item)=Retorna o número de ocorrências do item na lista
-index(item)=retorna o indice da primeira ocorrencia do item na lista
-insert(indice,item)=insere item em um indice especifico
-pop()=remove o ultimo item
-remove(item)=remove a primeira ocorrencia do item
-reverse()=invert  a ordem da lista
-sort()=ordena a lista
+append(item) = adiciona um item ao final da lista
+count(item) = Retorna o número de ocorrências do item na lista
+index(item) = retorna o indice da primeira ocorrencia do item na lista
+insert(indice,item) = insere item em um indice especifico
+pop() = remove o ultimo item
+remove(item) = remove a primeira ocorrencia do item
+reverse() = invert  a ordem da lista
+sort() = ordena a lista
 
 _________________________________________________________________________________________________________________
 ____________________METÓDOS PARA STRINGS_________________________________________________________________________
-startswith=verifica se caracteres existem no inicio da string
-endswith=verifica se caracteres existemno final da string
-lower=converte string para minuscula
-upper=convertestring para maiuscula
-find=busca a primeira ocorrencia de um caractere em uma string
-rfind=busca a primeira ocorrencia de um caractere em uma string da direita para a esquerda
-center=centraliza uma string
-ljust=ajusta uma string para alinhamentos para  a ESQUERDA
-rjust=ajusta uma string para alinhamentos para  a DIREITA
-split=divide uma string
-replace=substitui caracteres em uma string
-lstrip= remove espaços em branco a ESQUERDA de uma string
-rstrip= remove espaços em branco a DIREITA de uma string
-strip=remove espaços em branco de uma extremidade
+startswith = verifica se caracteres existem no inicio da string
+endswith = verifica se caracteres existem no final da string
+lower = converte string para minuscula
+upper = convertestring para maiuscula
+find = busca a primeira ocorrencia de um caractere em uma string
+rfind = busca a primeira ocorrencia de um caractere em uma string da direita para a esquerda
+center = centraliza uma string
+ljust = ajusta uma string para alinhamentos para  a ESQUERDA
+rjust = ajusta uma string para alinhamentos para  a DIREITA
+split = divide uma string
+replace = substitui caracteres em uma string
+lstrip = remove espaços em branco a ESQUERDA de uma string
+rstrip = remove espaços em branco a DIREITA de uma string
+strip = remove espaços em branco de uma extremidade
 ________________________________________________________________________________________________________________
 
 ________________________MANIPULAÇÃO DE ARQUIVOS_________________________________________________________________

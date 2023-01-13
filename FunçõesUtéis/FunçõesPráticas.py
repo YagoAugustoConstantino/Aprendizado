@@ -5,9 +5,12 @@ def validacao(pergunta, min, max):
         x = int(input(pergunta))
     return x
 
+
 listaprodutos = []
 
-code: int=1
+code: int = 1
+
+
 # ---cadastrar produto---
 def Cadastrar_produto(code):
     print('Bem vindo ao Cadastro de Produtos')
@@ -20,7 +23,7 @@ def Cadastrar_produto(code):
                            'Valor': Valor,
                            'Código': code}
     listaprodutos.append(dicionario_produtos.copy())
-    code+=1
+    code += 1
 
 
 # ----- Fim do Cadastro---
@@ -65,18 +68,33 @@ def Consulta_produto():  # ---Começao de consulta por produto---
         except ValueError:
             print('É necessário usar um código que seja um número inteiro e positivo entre 1 e 4 ')
 
+
 # ____Fim da consulta____
 
-#------Começo da Remoção---
+# ------Começo da Remoção---
 def Remover_produto():
     print('Bem vindo a Remoção de produtos')
     entrada = int(input('Qual o Código do produto a ser removido?:'))
     for produto in listaprodutos:
         if produto['Código'] == entrada:
             listaprodutos.remove(produto)
-            #------------Fim da Remoção-----------
+            # ------------Fim da Remoção-----------
 
+# lista = []
+# dado = []
+# for i in range(0, 4):
+# dado.append(str(input('Insira o nome da pessoa')))
+# dado.append(int(input('insira o peso da pessoa')))
+# lista.append(dado[:])
+# dado.clear()
 
+# for g, p in lista:
+# print(f' a pessoa {g} pesa {p} KG ')
 
-
-
+# if len(lista) == 0:
+# maior = menor = variavel
+# else:
+# if variavel > maior:
+#  maior = variavel
+# elif variavel < menor:
+#  menor = variavel

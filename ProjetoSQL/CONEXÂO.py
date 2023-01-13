@@ -5,16 +5,18 @@ from mysql import connector
 
 pd.set_option('display.expand_frame_repr', False)
 
+# Conexão com o MySql
+conexao = connector.connect(host='localhost',
+                            user='root',
+                            password='Y@g22523464',
+                            database='uninter')
+
 
 # CRUD em Python e Sql, usando pandas para visualização de tabelas
 
 
 # Criando a função para visualizar uma tabela em python
 def ver_tabela():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     ordenador = conexao.cursor()
     nometabela = str(input('Qual o nome da tabela que vc deseja visualizar ?'))
 
@@ -33,10 +35,6 @@ def ver_tabela():
 
 # Criando a função para visualizar duas tabelas juntas em python
 def ver_tabelas_juntas():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela1 = str(input('Qual o nome da  primeira tabela que vc deseja juntar ?'))
     join1 = str(input('Qual a coluna da primeira tabela  que vc deseja que seja a base da junção ?'))
     nometabela2 = str(input('Qual o nome da  segunda tabela que vc deseja juntar ?'))
@@ -54,10 +52,6 @@ def ver_tabelas_juntas():
 
 # Criando a função para ver as colunas da tabela
 def nome_das_colunas():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual o nome da tabela que vc deseja ver as colunas  ?'))
     ordenador = conexao.cursor()
     ordem = f'select * from {nometabela};'
@@ -71,10 +65,6 @@ def nome_das_colunas():
 
 # Criando a função para visualizar como os dados estão organizados na tabela
 def describe():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual o nome da tabela que vc deseja visualizar ?'))
     ordenador = conexao.cursor()
     ordem = f'describe {nometabela};'
@@ -90,10 +80,6 @@ def describe():
 
 # Criando a função para inserir dados em uma tabela
 def inserir():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual o nome da tabela que vc deseja inserir dados  ?'))
     ordenador = conexao.cursor()
     nome_colunas = {}
@@ -121,10 +107,6 @@ def inserir():
 
 # Criando a função para deletar uma linha na tabela
 def deletar_linha():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual o nome da tabela que você deseja deletar um item ?'))
     cod = int(input('Qual o codigo do item que vc deseja deletar ?'))
     lista_colunas = []
@@ -141,10 +123,6 @@ def deletar_linha():
 
 # Criando a função para deleter uma coluna inteira na tabela
 def deletar_coluna():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual o nome da tabela que vc deseja visualizar ?'))
     coluna = str(input('Qual a coluna que vc deseja excluir ?'))
     ordenador = conexao.cursor()
@@ -156,10 +134,6 @@ def deletar_coluna():
 
 # Criando a função de  deletar uma tabela
 def deletar_tabela():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual o nome da tabela que vc deseja visualizar ?'))
     ordenador = conexao.cursor()
     ordem = f'drop table {nometabela};'
@@ -170,10 +144,6 @@ def deletar_tabela():
 
 # Função para atualizar uma linha
 def atualizar_dado():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     nometabela = str(input('Qual a tabela que receberá a atualização ?'))
     colunamudada = str(input('Qual a coluna do item será mudada ?'))
     mudanca = str(input('O Novo Valor que será inserido ?'))
@@ -196,10 +166,6 @@ def atualizar_dado():
 
 # Função para mostrar todas as tabelas
 def mostrar_tabelas():
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     ordenador = conexao.cursor()
     ordem = f'show tables'
     ordenador.execute(ordem)
@@ -241,10 +207,6 @@ def criar_tabela():
                 print('valores inválidos.. tente novamente usando TEXTO ou NUMERO')
     for c, t in zip(lista_coluna, lista_tipo):
         tabela[c] = t
-    conexao = connector.connect(host='localhost',
-                                user='root',
-                                password='Y@g22523464',
-                                database='uninter')
     tabela = str(tabela).strip('{}')
     tabela = tabela.replace(":", "")
     tabela = tabela.replace("'", "")
@@ -265,33 +227,33 @@ def menu_ver_tabelas():
         print('4 - Ver Duas tabelas ligadas entre si ')
         print('5 - Ver o nome das colunas de uma tabela determinada')
         print('6 - Retornar ao Menu Principal', end=' ')
-        op = int(input(':'))
-        if op == 1:
+        opmenuprincipal = int(input(':'))
+        if opmenuprincipal == 1:
             mostrar_tabelas()
             print('\n')
             sleep(1)
             continue
-        elif op == 2:
+        elif opmenuprincipal == 2:
             describe()
             print('\n')
             sleep(1)
             continue
-        elif op == 3:
+        elif opmenuprincipal == 3:
             ver_tabela()
             print('\n')
             sleep(1)
             continue
-        elif op == 4:
+        elif opmenuprincipal == 4:
             ver_tabelas_juntas()
             print('\n')
             sleep(1)
             continue
-        elif op == 5:
+        elif opmenuprincipal == 5:
             nome_das_colunas()
             print('\n')
             sleep(1)
             continue
-        elif op == 6:
+        elif opmenuprincipal == 6:
             break
 
 
@@ -299,26 +261,31 @@ def menu_deletar():
     while True:
         print('1 - Deletar Tabela')
         print('2 - Deletar Coluna')
-        print('3 - Deletar linha', end='')
-        op = int(input(':'))
-        if op == 1:
+        print('3 - Deletar linha')
+        print('4 - Retornar ao Menu Principal', end='')
+        opmenudeletar = int(input(':'))
+        if opmenudeletar == 1:
             sleep(0.5)
             deletar_tabela()
             print('\n')
             sleep(0.5)
             continue
-        elif op == 2:
+        elif opmenudeletar == 2:
             sleep(0.5)
             deletar_coluna()
             print('\n')
             sleep(0.5)
             continue
-        elif op == 3:
+        elif opmenudeletar == 3:
             sleep(0.5)
             deletar_linha()
             print('\n')
             sleep(0.5)
             continue
+        elif opmenudeletar == 4:
+            print('Retornando ao Menu Principal....')
+            sleep(0.5)
+            break
 
 
 print('Bem Vindo ao Banco de Dados DYB ')
@@ -328,32 +295,31 @@ while True:
     print('3- Atualizar Um Item')
     print('4 - Deletar ')
     print('5 - Sair do Programa ', end='')
-    op = int(input(':'))
-    if op == 1:
+    opMenuVerTabela = int(input(':'))
+    if opMenuVerTabela == 1:
         sleep(0.5)
         criar_tabela()
         sleep(0.5)
         continue
-    elif op == 2:
+    elif opMenuVerTabela == 2:
         sleep(0.5)
         menu_ver_tabelas()
         sleep(0.5)
         continue
-    elif op == 3:
+    elif opMenuVerTabela == 3:
         sleep(0.5)
         atualizar_dado()
         print('\n')
         sleep(0.5)
         continue
-    elif op == 4:
+    elif opMenuVerTabela == 4:
         sleep(0.5)
         menu_deletar()
         sleep(0.5)
         continue
-    elif op == 5:
+    elif opMenuVerTabela == 5:
         break
     else:
         print('Opção inválida...Tente um Número entre 1 e 5 ')
         sleep(0.5)
-
         continue

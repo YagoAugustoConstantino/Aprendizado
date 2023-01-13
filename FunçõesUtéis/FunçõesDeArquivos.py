@@ -1,69 +1,69 @@
-def ExixteArquivo1(nomearquivo):
-    global x
+import os
+
+lista_de_arquivos = os.listdir(r'..\ARQUIVOS')
+for arquivo in lista_de_arquivos:
+    print(arquivo)
+
+
+def exixtearquivo1(nomearquivo):
     try:
-        with open(nomearquivo, 'rt') as x:
-            x.read()
+        with open(nomearquivo, 'rt') as doc:
+            doc.read()
     except FileNotFoundError:
         return False
     else:
         return True
 
 
-def criarArquivo1(nomearquivo):
-    global x
+def criararquivo1(nomearquivo):
     try:
-        with open(nomearquivo, 'wt+') as x:
-            x.write(' ')
+        with open(nomearquivo, 'wt+') as doc:
+            doc.write(' ')
 
-    except:
+    except FileNotFoundError:
         print('Erro na criação de arquivo')
     else:
         print(f'Arquivo {nomearquivo} foi criado com sucesso')
 
 
-def EscreverArquivo(nomearquivo):
+def escreverarquivo(nomearquivo):
     try:
-        with open(nomearquivo, 'at+') as x:
-            x.write(input('insira o que será escrito no arquivo'))
-            x.write('\n')
-    except:
+        with open(nomearquivo, 'at+') as doc:
+            doc.write(input('insira o que será escrito no arquivo'))
+            doc.write('\n')
+    except FileNotFoundError:
         print('Não foi possivel abrir o arquivo')
 
 
 def lerarquivocompleto1(nomearquivo):
     try:
-        with open(nomearquivo, 'rt+') as x:
-            print(x.read())
-    except:
+        with open(nomearquivo, 'rt+') as doc:
+            print(doc.read())
+    except FileNotFoundError:
         print('Não foi possivel abrir o arquivo')
 
 
-def cadastrarjogo(nomearquivo, nomeJogo, nomeVideogame):
-    global x
+def cadastrarjogo(nomearquivo, nomejogo, nomevideogame):
     try:
-        x = open(nomearquivo, 'at')
-    except:
+        with open(nomearquivo, 'at') as doc:
+            doc.write(f'{nomejogo}:{nomevideogame}\n')
+    except FileNotFoundError:
         print('Erro ao abrir arquivo')
     else:
-        x.write(f'{nomeJogo}:{nomeVideogame}\n')
-    finally:
-        x.close()
+        print('Cadastro Bem sucedido')
 
 
-def listarArquivo(nomearquivo):
-    global x
+def listararquivo(nomearquivo):
+    global arquivo
     try:
-        x = open(nomearquivo, 'rt')
-    except:
+        arquivo = open(nomearquivo, 'rt')
+    except FileNotFoundError:
         print('Erro ao abrir o arquivo')
     else:
-        print(x.read())
+        print(arquivo.read())
     finally:
-        x.close()
-
-
-
-                                    # criarArquivo1('NotasNovas')
-EscreverArquivo('NotasNovas')
-listarArquivo('NotasNovas')
-#listarArquivo('../ARQUIVOS/notas2.txt')
+        arquivo.close()
+# criararquivo1('NotasNovas')
+# escreverarquivo('NotasNovas')
+# listararquivo('NotasNovas')
+# listarArquivo('../ARQUIVOS/notas2.txt')
