@@ -14,8 +14,7 @@ sleep(2)
 drive.find_element('xpath', '/html/body/header/nav[1]/ul/li/a').click()
 sleep(10)
 
-drive.find_element('xpath', '/html/body/div/div/div[4]/div/main/div/form/fieldset/span/input').send_keys(
-    'yagoa.const@outlook.com.br')
+drive.find_element('xpath', '/html/body/div/div/div[4]/div/main/div/form/fieldset/span/input').send_keys('yagoa.const@outlook.com.br')
 sleep(2)
 
 drive.find_element('xpath', '//*[@id="dssLogin"]/div[2]/button').click()
