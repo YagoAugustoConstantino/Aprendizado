@@ -33,33 +33,34 @@ def consulta_produto():  # ---Começao de consulta por produto---
             print('3-Consultar por Fabricante')
             print('4-Retornar')
             opcao2 = int(input('Escolha uma Tarefa a ser executada\n'))  # Consulta todos os produtos cadastrados
-            if opcao2 == 1:
-                print('Bem vindo a Consultar todos os produtos')
-                for produto in listaprodutos:  # seleciona cada dicionário de minha lista
-                    for key, value in produto.items():  # seleciona cada conjunto chave/valor do dicionário(nome/leite)
-                        print('{}:{}\n'.format(key, value))  # imprime cada conjunto
+            match opcao2:
+                case 1:
+                    print('Bem vindo a Consultar todos os produtos')
+                    for produto in listaprodutos:  # seleciona cada dicionário de minha lista
+                        for key, value in produto.items():  # seleciona cada conjunto chave/valor do dicionário(nome/leite)
+                            print('{}:{}\n'.format(key, value))  # imprime cada conjunto
 
-            elif opcao2 == 2:
-                print('Bem vindo a Consultar por Código')
-                entrada = int(input('Qual o Código do produto?:\n'))
-                for produto in listaprodutos:
-                    if produto['Código'] == entrada:
-                        for key, value in produto.items():
-                            print('{}:{}\n'.format(key, value))
-            elif opcao2 == 3:
-                print('Bem vindo a Consultar por Fabricante')
-                entrada = input('Qual o nome do Fabricante?:')
-                for produto in listaprodutos:
-                    if produto['Fabricante'] == entrada:
-                        for key, value in produto.items():
-                            print('{}:{}\n'.format(key, value))
+                case 2:
+                    print('Bem vindo a Consultar por Código')
+                    entrada = int(input('Qual o Código do produto?:\n'))
+                    for produto in listaprodutos:
+                        if produto['Código'] == entrada:
+                            for key, value in produto.items():
+                                print('{}:{}\n'.format(key, value))
+                case 3:
+                    print('Bem vindo a Consultar por Fabricante')
+                    entrada = input('Qual o nome do Fabricante?:')
+                    for produto in listaprodutos:
+                        if produto['Fabricante'] == entrada:
+                            for key, value in produto.items():
+                                print('{}:{}\n'.format(key, value))
 
-            elif opcao2 == 4:
-                print('Retornando ao Menu Principal')
-                return
-            else:
-                print('Opção inválida...Tente novamente')
-                continue
+                case 4:
+                    print('Retornando ao Menu Principal')
+                    return
+                case _:
+                    print('Opção inválida...Tente novamente')
+                    continue
         except ValueError:
             print('É necessário usar um código que seja um número inteiro e positivo entre 1 e 4 ')
 
@@ -87,20 +88,22 @@ while True:
         print('3-Remover produto')
         print('4-Sair')
         opcao = int(input('Escolha uma Tarefa a ser executada\n'))
-        if opcao == 1:
-            Codigo += 1
-            cadastrar_produto(Codigo)
-        elif opcao == 2:
-            consulta_produto()
-        elif opcao == 3:
-            remover_produto()
-        elif opcao == 4:
-            print('\nCadastro de produtos Encerrado....')
-            break
-        elif opcao < 1 or opcao > 4:
-            print('Opção inválida...Tente novamente\n')
-            continue
+        match opcao :
+            case 1 :
+                Codigo += 1
+                cadastrar_produto(Codigo)
+            case 2 :
+                consulta_produto()
+            case 3:
+                remover_produto()
+            case 4:
+                print('\nCadastro de produtos Encerrado....')
+                break
+            case _:
+                print('Opção inválida...Tente novamente\n')
+                continue
     except ValueError:
         print('É necessário usar um código que seja um número inteiro e positivo entre 1 e 4\n ')
 
-# ---------Fim Main-------------
+# ---------Fim Main-------------1
+

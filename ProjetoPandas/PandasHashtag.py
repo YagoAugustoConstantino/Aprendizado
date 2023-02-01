@@ -54,3 +54,10 @@ def nome_loja():
             print('Nome inválido.... tente novamente\n')
             loja = input('Coloque o nome da loja para saber seus dados')
         print(tabela_vendas[tabela_vendas['ID Loja'] == loja])
+        op = str(input('Deseja consultar mais lojas ? [S/N]')).upper()
+        if op == 'S':
+            continue
+        else:
+            break
+
+nome_loja()

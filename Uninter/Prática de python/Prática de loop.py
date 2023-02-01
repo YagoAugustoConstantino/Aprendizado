@@ -1,3 +1,5 @@
+import time
+
 soma = 0
 for i in range(0, 3):
     x = int(input('Insira 3 numeros para descobrir sua soma'))
@@ -31,3 +33,30 @@ while contador <=9:
     contador +=2
 
 print('\n')
+
+def calculadora():
+    while True:
+        n1 = float(input('Insira o Primeiro Número\n'))
+        n2 = float(input('Insira o Segunda Número\n'))
+        op = int(input('''Digite 1 para Somar os Números:
+Digite 2 para Subtrair os Números:
+Digite 3 para Multiplicar os Números:
+Digite 4 para Dividir os Números :
+Digite 5 Para Sair'''))
+        if op ==1:
+            print(f'A Soma do Primeiro com o Segundo Número é {n1+n2}')
+        elif op ==2:
+            print(f'A Subtração  do Primeiro com o Segundo Número é {n1 - n2}')
+        elif op == 3:
+            print(f'A Multiplicação do Primeiro com o Segundo Número é {n1 * n2}')
+        elif op == 4:
+            print(f'A Divisão do Primeiro com o Segundo Número é {n1 / n2}')
+        elif op == 5 :
+            print('Encerrando o Programa... ')
+            time.sleep(2)
+            break
+        elif op not in range(0,6):
+            print('Opção Inválida ... Tente novamente')
+            continue
+
+calculadora()
